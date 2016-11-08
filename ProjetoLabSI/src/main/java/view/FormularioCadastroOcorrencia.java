@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -56,6 +57,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		JOptionPane.showMessageDialog(null, "Registrar Boleltim de Ocorrência");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -217,7 +219,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		contentPane.add(lblCep);
 
 		lblDataDeNascimento = new JLabel("Data de Nascimento");
-		lblDataDeNascimento.setBounds(562, 44, 130, 14);
+		lblDataDeNascimento.setBounds(562, 45, 130, 14);
 		contentPane.add(lblDataDeNascimento);
 
 		label = new JLabel("Estado");
