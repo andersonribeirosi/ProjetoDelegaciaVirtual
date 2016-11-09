@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Embeddable
-@Table(name="ocorrencia")
+@Table(name="ocorrencias")
 public class Ocorrencia {
 	private long protocolo;
 	private String descricao;

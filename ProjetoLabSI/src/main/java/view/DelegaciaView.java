@@ -1,5 +1,9 @@
 package view;
 
-public class DelegaciaView {
+import javax.swing.JFrame;
+
+public class DelegaciaView extends JFrame {
+	
+	
 
 }

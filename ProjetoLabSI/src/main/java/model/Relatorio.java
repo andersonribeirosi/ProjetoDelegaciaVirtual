@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Embeddable
-@Table(name = "relatorio")
+@Table(name = "relatorios")
 public class Relatorio {
 
 	@Embedded

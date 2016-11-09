@@ -7,32 +7,44 @@ import javax.persistence.Table;
 
 @Entity
 @Embeddable
-@Table(name = "telefone")
+@Table(name = "telefones")
 public class Telefone {
-	private int numero;
-	private int ddd;
+	private int numeroFixo;
+	private int numeroCelular;
+	private int email;
 
-	public Telefone(int numero, int ddd) {
-		this.numero = numero;
-		this.ddd = ddd;
+	public Telefone(int numeroFixo, int numeroCelular, int email) {
+		this.numeroFixo = numeroFixo;
+		this.numeroCelular = numeroCelular;
+		this.email = email;
 	}
 
-	@Column(name = "numero")
-	public int getNumero() {
-		return numero;
+	@Column(name="telefone_fixo")
+	public int getNumeroFixo() {
+		return numeroFixo;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setNumeroFixo(int numeroFixo) {
+		this.numeroFixo = numeroFixo;
 	}
 
-	@Column(name = "ddd")
-	public int getDdd() {
-		return ddd;
+	@Column(name="celular")
+	public int getNumeroCelular() {
+		return numeroCelular;
 	}
 
-	public void setDdd(int ddd) {
-		this.ddd = ddd;
+	public void setNumeroCelular(int numeroCelular) {
+		this.numeroCelular = numeroCelular;
 	}
+
+	@Column(name="email")
+	public int getEmail() {
+		return email;
+	}
+
+	public void setEmail(int email) {
+		this.email = email;
+	}
+
 
 }

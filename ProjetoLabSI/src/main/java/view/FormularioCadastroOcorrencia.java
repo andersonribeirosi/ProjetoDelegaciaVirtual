@@ -2,6 +2,8 @@ package view;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -284,12 +286,20 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		btnLimpar.setBounds(140, 528, 91, 23);
 		contentPane.add(btnLimpar);
 
-		btnCancelar = new JButton("Cancelar");
+		btnCancelar = new JButton("Fechar");
 		btnCancelar.setBounds(261, 528, 91, 23);
 		contentPane.add(btnCancelar);
+		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+
+			}
+		});
+
 
 	}
-
+	
 	public JComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
