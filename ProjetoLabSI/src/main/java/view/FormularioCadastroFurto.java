@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
-public class FormularioCadastroOcorrencia extends JFrame {
+public class FormularioCadastroFurto extends JFrame {
 
 	/**
 	 * 
@@ -64,7 +64,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FormularioCadastroOcorrencia frame = new FormularioCadastroOcorrencia();
+					FormularioCadastroFurto frame = new FormularioCadastroFurto();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -77,7 +77,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 	 * Create the frame.
 	 */
 
-	public FormularioCadastroOcorrencia() {
+	public FormularioCadastroFurto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -124,7 +124,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		comboBox_1.setBounds(624, 123, 130, 22);
 		contentPane.add(comboBox_1);
 
-		JLabel lblBoDeExtravio = new JLabel("B.O. de Extravio / Perda");
+		JLabel lblBoDeExtravio = new JLabel("B.O. de Furto");
 		lblBoDeExtravio.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblBoDeExtravio.setBounds(22, 8, 287, 14);
 		contentPane.add(lblBoDeExtravio);

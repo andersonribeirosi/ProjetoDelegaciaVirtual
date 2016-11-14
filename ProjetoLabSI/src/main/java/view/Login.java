@@ -1,10 +1,14 @@
-package dao;
+package view;
 
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,11 +16,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import view.FormularioCadastroOcorrencia;
-import java.awt.SystemColor;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JCheckBox;
+import dao.Acesso;
 
 public class Login extends JFrame {
 
@@ -50,7 +50,10 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 
+	ActionListener cadastrarUsuario_click;
+	
 	public Login() {
+		setTitle("Login - Delegacia Virtual ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -78,12 +81,16 @@ public class Login extends JFrame {
 
 				if (cl.acesso == true) {
 
-					FormularioCadastroOcorrencia form = new FormularioCadastroOcorrencia();
+					DelegaciaView form = new DelegaciaView();
 					form.show();
 
 				}
 			}
 		});
+		
+
+		
+		
 		contentPane.add(btnAcessar);
 
 		JLabel lblLogin = new JLabel("Usu\u00E1rio");
@@ -116,6 +123,7 @@ public class Login extends JFrame {
 		chckbxNewCheckBox.setBackground(Color.LIGHT_GRAY);
 		chckbxNewCheckBox.setBounds(115, 194, 197, 23);
 		contentPane.add(chckbxNewCheckBox);
+		
 
 	}
 }

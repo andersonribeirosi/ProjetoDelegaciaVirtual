@@ -1,10 +1,11 @@
 package view;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class FormularioCadastroUsuario extends JFrame
@@ -17,8 +18,9 @@ public class FormularioCadastroUsuario extends JFrame
 	JButton bt_salvar, bt_limpar, bt_fechar;
 	
 	public FormularioCadastroUsuario(){
+		getContentPane().setBackground(Color.LIGHT_GRAY);
 
-		JOptionPane.showMessageDialog(null, "Cadastrar Usuario");
+//		JOptionPane.showMessageDialog(null, "Cadastrar Usuario");
 		setTitle("Cadastro de Usuario");
 		setSize(550, 450);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -37,6 +39,7 @@ public class FormularioCadastroUsuario extends JFrame
 	
 		
 		cb_usuario = new JComboBox<String>();
+		cb_usuario.setBackground(Color.LIGHT_GRAY);
 		
 		bt_salvar = new JButton("Salvar");
 		bt_limpar = new JButton("Limpar");
@@ -70,17 +73,17 @@ public class FormularioCadastroUsuario extends JFrame
 		lb_usuario.setBounds(20, 20, 100, 15);
 		cb_usuario.setBounds(20, 40, 170, 25);
 		
-		lb_cpf.setBounds(180, 70, 100, 15);
-		tf_cpf.setBounds(180, 90, 150, 25);
+		lb_cpf.setBounds(180, 76, 100, 15);
+		tf_cpf.setBounds(180, 96, 197, 25);
 		
-		lb_rg.setBounds(20, 70, 100, 15);
-		tf_rg.setBounds(20, 90, 150, 25);		
+		lb_rg.setBounds(20, 76, 100, 15);
+		tf_rg.setBounds(20, 96, 150, 25);		
 		
 		lb_dataDeNascimento.setBounds(330, 25, 300, 15);
 		tf_dataDeNascimento.setBounds(330, 45, 180, 20);
 		
-		lb_senha.setBounds(20, 180, 150, 15);
-		tf_senha.setBounds(20, 200, 150, 25);
+		lb_senha.setBounds(20, 143, 150, 15);
+		tf_senha.setBounds(20, 163, 150, 25);
 		
 		
 		bt_salvar.setBounds(20, 340, 80, 30);

@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class FormularioVeiculo extends JFrame {
+public class FormularioConsultaVeiculo extends JFrame {
 
 	/**
 	 * 
@@ -21,9 +21,9 @@ public class FormularioVeiculo extends JFrame {
 	JComboBox<String> cb_cor, cb_marca;
 	JButton bt_consulta, bt_limpar, bt_fechar;
 
-	public FormularioVeiculo() {
+	public FormularioConsultaVeiculo() {
 
-		JOptionPane.showMessageDialog(null, "Consultar Situação do Veículo");
+//		JOptionPane.showMessageDialog(null, "Consultar Situação do Veículo");
 		setTitle("Consulta de Veículos");
 		setSize(550, 450);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -135,6 +135,6 @@ public class FormularioVeiculo extends JFrame {
 	}
 
 	public static void main(String args[]) {
-		new FormularioVeiculo().setVisible(true);
+		new FormularioConsultaVeiculo().setVisible(true);
 	}
 }
