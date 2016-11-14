@@ -75,6 +75,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+
 	public FormularioCadastroOcorrencia() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
@@ -289,7 +290,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		btnCancelar = new JButton("Fechar");
 		btnCancelar.setBounds(261, 528, 91, 23);
 		contentPane.add(btnCancelar);
-		
+
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -297,9 +298,8 @@ public class FormularioCadastroOcorrencia extends JFrame {
 			}
 		});
 
-
 	}
-	
+
 	public JComboBox<String> getComboBox_2() {
 		return comboBox_2;
 	}
