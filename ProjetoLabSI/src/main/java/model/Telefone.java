@@ -1,50 +1,36 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity
-@Embeddable
-@Table(name = "telefones")
-public class Telefone {
-	private int numeroFixo;
-	private int numeroCelular;
-	private int email;
-
-	public Telefone(int numeroFixo, int numeroCelular, int email) {
-		this.numeroFixo = numeroFixo;
-		this.numeroCelular = numeroCelular;
-		this.email = email;
+public class Telefone 
+{	
+	private int numero;
+	private int ddd;
+	
+	public Telefone(int numero, int ddd) {
+		super();
+		this.numero = numero;
+		this.ddd = ddd;
 	}
 
-	@Column(name="telefone_fixo")
-	public int getNumeroFixo() {
-		return numeroFixo;
+	public int getNumero() 
+	{
+		return numero;
 	}
 
-	public void setNumeroFixo(int numeroFixo) {
-		this.numeroFixo = numeroFixo;
+	public void setNumero(int numero)
+	{
+		this.numero = numero;
 	}
 
-	@Column(name="celular")
-	public int getNumeroCelular() {
-		return numeroCelular;
+	public int getDdd() 
+	{
+		return ddd;
 	}
 
-	public void setNumeroCelular(int numeroCelular) {
-		this.numeroCelular = numeroCelular;
+	public void setDdd(int ddd) 
+	{
+		this.ddd = ddd;
 	}
-
-	@Column(name="email")
-	public int getEmail() {
-		return email;
-	}
-
-	public void setEmail(int email) {
-		this.email = email;
-	}
-
+	
+	
 
 }
