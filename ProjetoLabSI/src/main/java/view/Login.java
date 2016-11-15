@@ -17,6 +17,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import dao.Acesso;
+import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 
 public class Login extends JFrame {
 
@@ -109,8 +111,8 @@ public class Login extends JFrame {
 		
 		lblLogin_1 = new JLabel("Login");
 		lblLogin_1.setForeground(SystemColor.activeCaption);
-		lblLogin_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblLogin_1.setBounds(48, 26, 119, 32);
+		lblLogin_1.setFont(new Font("Tahoma", Font.BOLD, 19));
+		lblLogin_1.setBounds(48, 33, 119, 23);
 		contentPane.add(lblLogin_1);
 		
 		lblEntreComOs = new JLabel("Entre com os dados corretamente para acessar o sistema.");

@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class DelegaciaView extends JFrame {
 
@@ -51,6 +53,9 @@ public class DelegaciaView extends JFrame {
 	ActionListener criarFormularioVeiculo_click;
 	ActionListener cadastrarOcorrencia_click;
 	ActionListener btnCadastrar_click;
+	private JLabel label;
+	private JLabel lblNewLabel;
+	private JLabel label_1;
 	
 	
 //	private JButton btnCadastrar;
@@ -75,7 +80,7 @@ public class DelegaciaView extends JFrame {
 		// definir o titulo do formulario
 
 		setTitle("Delegacia Virtual");
-		setSize(364, 315);
+		setSize(344, 315);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,16 +119,16 @@ public class DelegaciaView extends JFrame {
 
 		// criar os botões
 		comando_sair = new JButton("Sair");
-		comando_sair.setBounds(19, 228, 120, 30);
+		comando_sair.setBounds(108, 247, 120, 30);
 		comando_sair.addActionListener(comando_sair_click);
 
 		criarFormularioVeiculo = new JButton("Consultar Situa\u00E7\u00E3o do Ve\u00EDculo");
-		criarFormularioVeiculo.setBounds(19, 26, 204, 30);
+		criarFormularioVeiculo.setBounds(81, 26, 222, 43);
 		criarFormularioVeiculo.addActionListener(criarFormularioVeiculo_click);
 		contentPane.setLayout(null);
 
-		cadastrarOcorrencia = new JButton("Cadastrar Ocorrencia");
-		cadastrarOcorrencia.setBounds(19, 75, 204, 30);
+		cadastrarOcorrencia = new JButton("Registro de B.O Extravio / Perda");
+		cadastrarOcorrencia.setBounds(81, 97, 222, 43);
 		cadastrarOcorrencia.addActionListener(cadastrarOcorrencia_click);
 		contentPane.setLayout(null);
 
@@ -135,9 +140,24 @@ public class DelegaciaView extends JFrame {
 		
 		
 		btnCadastrar = new JButton("Cadastrar Ocorr\u00EAncia de Furto");
-		btnCadastrar.setBounds(19, 128, 204, 30);
+		btnCadastrar.setBounds(81, 171, 222, 43);
 		btnCadastrar.addActionListener(btnCadastrar_click);
 		contentPane.add(btnCadastrar);
+		
+		label = new JLabel("");
+		label.setIcon(new ImageIcon("G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_extrravio_perda.jpg"));
+		label.setBounds(32, 90, 46, 55);
+		contentPane.add(label);
+		
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_consulta_furto.png"));
+		lblNewLabel.setBounds(32, 26, 46, 43);
+		contentPane.add(lblNewLabel);
+		
+		label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon("G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_bo_furto.png"));
+		label_1.setBounds(32, 171, 46, 43);
+		contentPane.add(label_1);
 
 	}
 }
