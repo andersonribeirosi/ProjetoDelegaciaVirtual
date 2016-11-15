@@ -70,6 +70,7 @@ public class Login extends JFrame {
 
 		JButton btnAcessar = new JButton("Acessar");
 		btnAcessar.setBounds(118, 239, 91, 23);
+		contentPane.add(btnAcessar);
 		btnAcessar.addActionListener(new ActionListener() {
 
 			@SuppressWarnings("deprecation")
@@ -92,7 +93,7 @@ public class Login extends JFrame {
 
 		
 		
-		contentPane.add(btnAcessar);
+		
 
 		JLabel lblLogin = new JLabel("Usu\u00E1rio");
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 11));
