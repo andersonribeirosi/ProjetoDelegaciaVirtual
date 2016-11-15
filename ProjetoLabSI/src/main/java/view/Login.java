@@ -52,7 +52,7 @@ public class Login extends JFrame {
 
 	ActionListener cadastrarUsuario_click;
 	private JButton btnSair;
-	
+
 	public Login() {
 		setTitle("Login - Delegacia Virtual ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,14 +86,14 @@ public class Login extends JFrame {
 					DelegaciaView form = new DelegaciaView();
 					form.show();
 
+				} else {
+					
+							textLogin.setText(null);
+							passwordField.setText(null);
 				}
-			}
+				
+				}
 		});
-		
-
-		
-		
-		
 
 		JLabel lblLogin = new JLabel("Usu\u00E1rio");
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -108,35 +108,34 @@ public class Login extends JFrame {
 		passwordField = new JPasswordField();
 		passwordField.setBounds(162, 155, 150, 20);
 		contentPane.add(passwordField);
-		
+
 		lblLogin_1 = new JLabel("Login");
 		lblLogin_1.setForeground(SystemColor.activeCaption);
 		lblLogin_1.setFont(new Font("Tahoma", Font.BOLD, 19));
 		lblLogin_1.setBounds(48, 33, 119, 23);
 		contentPane.add(lblLogin_1);
-		
+
 		lblEntreComOs = new JLabel("Entre com os dados corretamente para acessar o sistema.");
 		lblEntreComOs.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblEntreComOs.setBounds(48, 59, 346, 14);
 		contentPane.add(lblEntreComOs);
-		
+
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Mantenha-me conectado");
 		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		chckbxNewCheckBox.setBackground(Color.LIGHT_GRAY);
 		chckbxNewCheckBox.setBounds(115, 194, 197, 23);
 		contentPane.add(chckbxNewCheckBox);
-		
+
 		btnSair = new JButton("Sair");
 		btnSair.setBounds(221, 239, 91, 23);
 		contentPane.add(btnSair);
-		
+
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 
 			}
 		});
-		
 
 	}
 }
