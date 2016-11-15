@@ -17,8 +17,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import dao.Acesso;
-import javax.swing.ImageIcon;
-import javax.swing.UIManager;
 
 public class Login extends JFrame {
 
@@ -53,6 +51,7 @@ public class Login extends JFrame {
 	 */
 
 	ActionListener cadastrarUsuario_click;
+	private JButton btnSair;
 	
 	public Login() {
 		setTitle("Login - Delegacia Virtual ");
@@ -70,7 +69,7 @@ public class Login extends JFrame {
 		textLogin.setColumns(10);
 
 		JButton btnAcessar = new JButton("Acessar");
-		btnAcessar.setBounds(177, 239, 91, 23);
+		btnAcessar.setBounds(118, 239, 91, 23);
 		btnAcessar.addActionListener(new ActionListener() {
 
 			@SuppressWarnings("deprecation")
@@ -125,6 +124,17 @@ public class Login extends JFrame {
 		chckbxNewCheckBox.setBackground(Color.LIGHT_GRAY);
 		chckbxNewCheckBox.setBounds(115, 194, 197, 23);
 		contentPane.add(chckbxNewCheckBox);
+		
+		btnSair = new JButton("Sair");
+		btnSair.setBounds(221, 239, 91, 23);
+		contentPane.add(btnSair);
+		
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+
+			}
+		});
 		
 
 	}
