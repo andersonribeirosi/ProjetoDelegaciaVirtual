@@ -126,7 +126,8 @@ public class FormularioCadastroFurto extends JFrame {
 		contentPane.add(comboBox_1);
 
 		JLabel lblBoDeExtravio = new JLabel(" B.O. de Furto");
-		lblBoDeExtravio.setIcon(new ImageIcon("G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_bo_furto.png"));
+		lblBoDeExtravio.setIcon(new ImageIcon(
+				"G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_bo_furto.png"));
 		lblBoDeExtravio.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblBoDeExtravio.setBounds(22, 11, 287, 42);
 		contentPane.add(lblBoDeExtravio);
@@ -290,6 +291,37 @@ public class FormularioCadastroFurto extends JFrame {
 		btnLimpar = new JButton("Limpar");
 		btnLimpar.setBounds(140, 528, 91, 23);
 		contentPane.add(btnLimpar);
+		btnLimpar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				textField.setText(null);
+				textField_1.setText(null);
+				textField_2.setText(null);
+				textField_3.setText(null);
+				comboBox_1.setSelectedItem(null);
+				textField_4.setText(null);
+				textField_5.setText(null);
+				textField_6.setText(null);
+				textField_7.setText(null);
+				textField_8.setText(null);
+//				lblNewLabel.setText(null);
+//				lblNmero.setText(null);
+//				lblComplemento.setText(null);
+				textField_9.setText(null);
+				textField_10.setText(null);
+				comboBox_2.setSelectedItem(null);
+				cb_estado.setSelectedItem(null);
+				textField_11.setText(null);
+
+				textField_12.setText(null);
+				textField_13.setText(null);
+				textField_14.setText(null);
+
+			}
+		});
+
+//		contentPane.add(btnLimpar);
 
 		btnCancelar = new JButton("Fechar");
 		btnCancelar.setBounds(261, 528, 91, 23);
