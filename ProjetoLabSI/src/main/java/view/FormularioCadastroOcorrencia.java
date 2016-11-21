@@ -124,8 +124,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		contentPane.add(cb_sexo);
 
 		JLabel lblBoDeExtravio = new JLabel(" B.O. de Extravio / Perda");
-		lblBoDeExtravio.setIcon(new ImageIcon(
-				"G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_extrravio_perda.jpg"));
+		lblBoDeExtravio.setIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_extrravio_perda.jpg"));
 		lblBoDeExtravio.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblBoDeExtravio.setBounds(22, 11, 287, 43);
 		contentPane.add(lblBoDeExtravio);
@@ -308,6 +307,25 @@ public class FormularioCadastroOcorrencia extends JFrame {
 				
 				controle.salvarOcorrencia(ocorrencia);
 				
+				tf_nomeUsuario.setText(null);
+				tf_dataNasc.setText(null);
+				tf_cpf.setText(null);
+				tf_rg.setText(null);
+				cb_estado1.setSelectedItem(null);
+				cb_sexo.setSelectedItem(null);
+				tf_nomeMae.setText(null);
+				tf_NomePai.setText(null);
+				tf_endereco.setText(null);
+				tf_numero.setText(null);
+				tf_complemento.setText(null);
+				tf_bairro.setText(null);
+				tf_cidade.setText(null);
+				cb_estado.setSelectedItem(null);
+				tf_cep.setText(null);
+				tf_telres.setText(null);
+				tf_celular.setText(null);
+				tf_email.setText(null);
+				ta_descricao.setText(null);
 				
 			}
 		});

@@ -85,6 +85,8 @@ public class FormularioConsultaVeiculo extends JFrame {
 				
 				
 				
+				//Captura os dados e  exibe na tela
+				
 //				String texto = "Dados do Véiculo \n " + " \n";
 //				texto += "Placa: " + tf_placa.getText() + " \n ";
 //				texto += "Renavan: " + tf_renavan.getText() + " \n ";

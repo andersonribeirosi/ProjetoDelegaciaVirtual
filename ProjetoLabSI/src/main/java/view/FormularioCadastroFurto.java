@@ -1,10 +1,12 @@
 package view;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -14,34 +16,37 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import java.awt.Color;
-import javax.swing.ImageIcon;
+
+import controller.ConexaoBD;
+import controller.ControleFurto;
+import model.Furto;
 
 public class FormularioCadastroFurto extends JFrame {
 
-	/**
-	 * 
-	 */
+	Furto furto = new Furto();
+	ControleFurto controle = new ControleFurto();
+	ConexaoBD connex = new ConexaoBD();
+
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JComboBox<String> comboBox_1;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
+	private JTextField tf_nomeUsuario;
+	private JTextField tf_dataNasc;
+	private JTextField tf_cpf;
+	private JTextField tf_rg;
+	private JComboBox<String> cb_sexo;
+	private JTextField tf_nomeMae;
+	private JTextField tf_nomePai;
+	private JTextField tf_endereco;
+	private JTextField tf_numero;
+	private JTextField tf_complemento;
 	private JLabel lblNewLabel;
 	private JLabel lblNmero;
 	private JLabel lblComplemento;
-	private JTextField textField_9;
-	private JTextField textField_10;
+	private JTextField tf_bairro;
+	private JTextField tf_cidade;
 	private JComboBox<String> comboBox_2;
 	private JComboBox<String> cb_estado;
-	private JTextField textField_11;
+	private JTextField tf_cep;
 	private JLabel lblEstado;
 	private JLabel lblCep;
 	private JLabel lblDataDeNascimento;
@@ -50,10 +55,10 @@ public class FormularioCadastroFurto extends JFrame {
 	private JLabel lblBairro;
 	private JLabel lblCidade;
 	private JLabel lblTelefone;
-	private JTextField textField_12;
-	private JTextField textField_13;
+	private JTextField tf_telres;
+	private JTextField tf_celular;
 	private JLabel lblCelular;
-	private JTextField textField_14;
+	private JTextField tf_email;
 	private JButton btnLimpar;
 	private JButton btnCancelar;
 
@@ -61,7 +66,7 @@ public class FormularioCadastroFurto extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog(null, "Registrar Boleltim de Ocorrência");
+		JOptionPane.showMessageDialog(null, "Registrar Furto");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -87,46 +92,46 @@ public class FormularioCadastroFurto extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		textField = new JTextField();
-		textField.setText("");
-		textField.setBounds(22, 80, 486, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tf_nomeUsuario = new JTextField();
+		tf_nomeUsuario.setText("");
+		tf_nomeUsuario.setBounds(22, 80, 486, 20);
+		contentPane.add(tf_nomeUsuario);
+		tf_nomeUsuario.setColumns(10);
 
-		textField_1 = new JTextField();
-		textField_1.setBounds(562, 80, 192, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		tf_dataNasc = new JTextField();
+		tf_dataNasc.setBounds(562, 80, 192, 20);
+		contentPane.add(tf_dataNasc);
+		tf_dataNasc.setColumns(10);
 
-		textField_2 = new JTextField();
-		textField_2.setText("");
-		textField_2.setColumns(10);
-		textField_2.setBounds(22, 134, 253, 20);
-		contentPane.add(textField_2);
+		tf_cpf = new JTextField();
+		tf_cpf.setText("");
+		tf_cpf.setColumns(10);
+		tf_cpf.setBounds(22, 134, 253, 20);
+		contentPane.add(tf_cpf);
 
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(285, 134, 189, 20);
-		contentPane.add(textField_3);
+		tf_rg = new JTextField();
+		tf_rg.setColumns(10);
+		tf_rg.setBounds(285, 134, 189, 20);
+		contentPane.add(tf_rg);
 
-		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.addItem("Paraíba");
-		comboBox.addItem("Pernambuco");
-		comboBox.addItem("Piauí");
-		comboBox.addItem("Bahia");
-		comboBox.addItem("São Paulo");
-		comboBox.addItem("Rio de Janeiro");
-		comboBox.setBounds(484, 134, 130, 22);
-		contentPane.add(comboBox);
+		final JComboBox<String> cb_estado1 = new JComboBox<String>();
+		cb_estado1.addItem("Paraíba");
+		cb_estado1.addItem("Pernambuco");
+		cb_estado1.addItem("Piauí");
+		cb_estado1.addItem("Bahia");
+		cb_estado1.addItem("São Paulo");
+		cb_estado1.addItem("Rio de Janeiro");
+		cb_estado1.setBounds(484, 134, 130, 22);
+		contentPane.add(cb_estado1);
 
-		comboBox_1 = new JComboBox<String>();
-		comboBox_1.addItem("Masculino");
-		comboBox_1.addItem("Feminino");
-		comboBox_1.setBounds(624, 134, 130, 22);
-		contentPane.add(comboBox_1);
+		cb_sexo = new JComboBox<String>();
+		cb_sexo.addItem("Masculino");
+		cb_sexo.addItem("Feminino");
+		cb_sexo.setBounds(624, 134, 130, 22);
+		contentPane.add(cb_sexo);
 
 		JLabel lblBoDeExtravio = new JLabel(" B.O. de Furto");
-		lblBoDeExtravio.setIcon(new ImageIcon("G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_bo_furto.png"));
+		lblBoDeExtravio.setIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_bo_furto.png"));
 		lblBoDeExtravio.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblBoDeExtravio.setBounds(22, 11, 287, 42);
 		contentPane.add(lblBoDeExtravio);
@@ -147,36 +152,36 @@ public class FormularioCadastroFurto extends JFrame {
 		lblNomeDaMe.setBounds(22, 166, 160, 14);
 		contentPane.add(lblNomeDaMe);
 
-		textField_4 = new JTextField();
-		textField_4.setText("");
-		textField_4.setColumns(10);
-		textField_4.setBounds(22, 190, 452, 20);
-		contentPane.add(textField_4);
+		tf_nomeMae = new JTextField();
+		tf_nomeMae.setText("");
+		tf_nomeMae.setColumns(10);
+		tf_nomeMae.setBounds(22, 190, 452, 20);
+		contentPane.add(tf_nomeMae);
 
 		JLabel lblNomeDoPai = new JLabel("Nome do Pai");
 		lblNomeDoPai.setBounds(22, 223, 160, 14);
 		contentPane.add(lblNomeDoPai);
 
-		textField_5 = new JTextField();
-		textField_5.setText("");
-		textField_5.setColumns(10);
-		textField_5.setBounds(22, 248, 452, 20);
-		contentPane.add(textField_5);
+		tf_nomePai = new JTextField();
+		tf_nomePai.setText("");
+		tf_nomePai.setColumns(10);
+		tf_nomePai.setBounds(22, 248, 452, 20);
+		contentPane.add(tf_nomePai);
 
-		textField_6 = new JTextField();
-		textField_6.setBounds(22, 304, 409, 20);
-		contentPane.add(textField_6);
-		textField_6.setColumns(10);
+		tf_endereco = new JTextField();
+		tf_endereco.setBounds(22, 304, 409, 20);
+		contentPane.add(tf_endereco);
+		tf_endereco.setColumns(10);
 
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(443, 304, 86, 20);
-		contentPane.add(textField_7);
+		tf_numero = new JTextField();
+		tf_numero.setColumns(10);
+		tf_numero.setBounds(443, 304, 86, 20);
+		contentPane.add(tf_numero);
 
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(539, 304, 215, 20);
-		contentPane.add(textField_8);
+		tf_complemento = new JTextField();
+		tf_complemento.setColumns(10);
+		tf_complemento.setBounds(539, 304, 215, 20);
+		contentPane.add(tf_complemento);
 
 		lblNewLabel = new JLabel("Endereço");
 		lblNewLabel.setBounds(22, 279, 70, 14);
@@ -190,15 +195,15 @@ public class FormularioCadastroFurto extends JFrame {
 		lblComplemento.setBounds(540, 279, 102, 14);
 		contentPane.add(lblComplemento);
 
-		textField_9 = new JTextField();
-		textField_9.setBounds(22, 354, 179, 20);
-		contentPane.add(textField_9);
-		textField_9.setColumns(10);
+		tf_bairro = new JTextField();
+		tf_bairro.setBounds(22, 354, 179, 20);
+		contentPane.add(tf_bairro);
+		tf_bairro.setColumns(10);
 
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(211, 354, 220, 20);
-		contentPane.add(textField_10);
+		tf_cidade = new JTextField();
+		tf_cidade.setColumns(10);
+		tf_cidade.setBounds(211, 354, 220, 20);
+		contentPane.add(tf_cidade);
 
 		cb_estado = new JComboBox<String>();
 
@@ -212,10 +217,10 @@ public class FormularioCadastroFurto extends JFrame {
 		cb_estado.setBounds(443, 353, 130, 22);
 		contentPane.add(cb_estado);
 
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(594, 354, 160, 20);
-		contentPane.add(textField_11);
+		tf_cep = new JTextField();
+		tf_cep.setColumns(10);
+		tf_cep.setBounds(594, 354, 160, 20);
+		contentPane.add(tf_cep);
 
 		lblEstado = new JLabel("Estado");
 		lblEstado.setBounds(443, 335, 46, 14);
@@ -249,31 +254,31 @@ public class FormularioCadastroFurto extends JFrame {
 		lblTelefone.setBounds(22, 403, 160, 14);
 		contentPane.add(lblTelefone);
 
-		textField_12 = new JTextField();
-		textField_12.setBounds(22, 426, 160, 20);
-		contentPane.add(textField_12);
-		textField_12.setColumns(10);
+		tf_telres = new JTextField();
+		tf_telres.setBounds(22, 426, 160, 20);
+		contentPane.add(tf_telres);
+		tf_telres.setColumns(10);
 
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		textField_13.setBounds(192, 426, 160, 20);
-		contentPane.add(textField_13);
+		tf_celular = new JTextField();
+		tf_celular.setColumns(10);
+		tf_celular.setBounds(192, 426, 160, 20);
+		contentPane.add(tf_celular);
 
 		lblCelular = new JLabel("Celular");
 		lblCelular.setBounds(192, 403, 46, 14);
 		contentPane.add(lblCelular);
 
-		textField_14 = new JTextField();
-		textField_14.setBounds(22, 479, 330, 20);
-		contentPane.add(textField_14);
-		textField_14.setColumns(10);
+		tf_email = new JTextField();
+		tf_email.setBounds(22, 479, 330, 20);
+		contentPane.add(tf_email);
+		tf_email.setColumns(10);
 
-		JTextArea textArea = new JTextArea();
-		textArea.setToolTipText("");
-		textArea.setWrapStyleWord(true);
-		textArea.setLineWrap(true);
-		textArea.setBounds(415, 425, 339, 74);
-		contentPane.add(textArea);
+		final JTextArea ta_descricao = new JTextArea();
+		ta_descricao.setToolTipText("");
+		ta_descricao.setWrapStyleWord(true);
+		ta_descricao.setLineWrap(true);
+		ta_descricao.setBounds(415, 425, 339, 74);
+		contentPane.add(ta_descricao);
 
 		JLabel lblFaaUmaBreve = new JLabel("Fa\u00E7a uma breve descri\u00E7\u00E3o do fato ocorrido");
 		lblFaaUmaBreve.setBounds(415, 403, 277, 14);
@@ -282,6 +287,55 @@ public class FormularioCadastroFurto extends JFrame {
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBounds(22, 528, 91, 23);
 		contentPane.add(btnRegistrar);
+		btnRegistrar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				furto.setNome(tf_nomeUsuario.getText());
+				furto.setData(tf_dataNasc.getText());
+				furto.setCpf(tf_cpf.getText());
+				furto.setRg(tf_rg.getText());
+				furto.setEstado1((String) cb_estado1.getSelectedItem());
+				furto.setSexo((String) cb_sexo.getSelectedItem());
+				furto.setMae(tf_nomeMae.getText());
+				furto.setPai(tf_nomePai.getText());
+				furto.setEndereco(tf_endereco.getText());
+				furto.setNumero(tf_numero.getText());
+				furto.setComplemento(tf_complemento.getText());
+				furto.setBairro(tf_bairro.getText());
+				furto.setCidade(tf_cidade.getText());
+				furto.setEstado((String) cb_estado.getSelectedItem());
+				furto.setCep(tf_cep.getText());
+				furto.setTelefoneres(tf_telres.getText());
+				furto.setCelular(tf_celular.getText());
+				furto.setEmail(tf_email.getText());
+				furto.setDescricao(ta_descricao.getText());
+
+				controle.salvarFurto(furto);
+
+				tf_nomeUsuario.setText(null);
+				tf_dataNasc.setText(null);
+				tf_cpf.setText(null);
+				tf_rg.setText(null);
+				cb_estado1.setSelectedItem(null);
+				cb_sexo.setSelectedItem(null);
+				tf_nomeMae.setText(null);
+				tf_nomePai.setText(null);
+				tf_endereco.setText(null);
+				tf_numero.setText(null);
+				tf_complemento.setText(null);
+				tf_bairro.setText(null);
+				tf_cidade.setText(null);
+				cb_estado.setSelectedItem(null);
+				tf_cep.setText(null);
+				tf_telres.setText(null);
+				tf_celular.setText(null);
+				tf_email.setText(null);
+				ta_descricao.setText(null);
+
+			}
+		});
 
 		JLabel lblEmail = new JLabel("E-mail");
 		lblEmail.setBounds(22, 454, 46, 14);
@@ -290,6 +344,37 @@ public class FormularioCadastroFurto extends JFrame {
 		btnLimpar = new JButton("Limpar");
 		btnLimpar.setBounds(140, 528, 91, 23);
 		contentPane.add(btnLimpar);
+		btnLimpar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				tf_nomeUsuario.setText(null);
+				tf_dataNasc.setText(null);
+				tf_cpf.setText(null);
+				tf_rg.setText(null);
+				cb_sexo.setSelectedItem(null);
+				tf_nomeMae.setText(null);
+				tf_nomePai.setText(null);
+				tf_endereco.setText(null);
+				tf_numero.setText(null);
+				tf_complemento.setText(null);
+				// lblNewLabel.setText(null);
+				// lblNmero.setText(null);
+				// lblComplemento.setText(null);
+				tf_bairro.setText(null);
+				tf_cidade.setText(null);
+				comboBox_2.setSelectedItem(null);
+				cb_estado.setSelectedItem(null);
+				tf_cep.setText(null);
+
+				tf_telres.setText(null);
+				tf_celular.setText(null);
+				tf_email.setText(null);
+
+			}
+		});
+
+		// contentPane.add(btnLimpar);
 
 		btnCancelar = new JButton("Fechar");
 		btnCancelar.setBounds(261, 528, 91, 23);
