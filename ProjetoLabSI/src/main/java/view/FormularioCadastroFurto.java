@@ -84,6 +84,7 @@ public class FormularioCadastroFurto extends JFrame {
 	 */
 
 	public FormularioCadastroFurto() {
+		setTitle("  B.O Cadastrar Ocorrência Furto  ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -378,9 +379,10 @@ public class FormularioCadastroFurto extends JFrame {
 		contentPane.add(btnCancelar);
 
 		btnCancelar.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 
-//				new DelegaciaView().show();  //retorna pra tela principal
+				new DelegaciaView().show();  //retorna pra tela principal
 				dispose(); // fecha a atual
 				
 			}

@@ -77,6 +77,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 	}
 
 	public FormularioCadastroOcorrencia() {
+		setTitle("  B.O Cadastrar Ocorrência  ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -344,9 +345,10 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		contentPane.add(btnCancelar);
 
 		btnCancelar.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				
-//				new DelegaciaView().show();  //retorna para a classe principal
+				new DelegaciaView().show();  //retorna para a classe principal
 				dispose(); //fecha a atual
 
 			}

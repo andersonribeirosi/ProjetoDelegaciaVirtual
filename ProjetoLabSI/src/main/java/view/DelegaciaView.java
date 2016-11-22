@@ -38,6 +38,7 @@ public class DelegaciaView extends JFrame {
 			}
 		});
 	}
+
 	JButton criarFormularioVeiculo;
 	JButton cadastrarOcorrencia;
 	JButton btnCadastrar;
@@ -117,6 +118,15 @@ public class DelegaciaView extends JFrame {
 		cadastrarOcorrencia.setBounds(81, 97, 222, 43);
 		cadastrarOcorrencia.addActionListener(cadastrarOcorrencia_click);
 		contentPane.setLayout(null);
+		cadastrarOcorrencia.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				dispose();
+
+			}
+		});
 
 		getContentPane().add(criarFormularioVeiculo);
 		getContentPane().add(cadastrarOcorrencia);
@@ -125,30 +135,39 @@ public class DelegaciaView extends JFrame {
 		btnCadastrar.setBounds(81, 171, 222, 43);
 		btnCadastrar.addActionListener(btnCadastrar_click);
 		contentPane.add(btnCadastrar);
+		btnCadastrar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				dispose();
+
+			}
+		});
 
 		label = new JLabel("");
 		label.setIcon(new ImageIcon(
-				"G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_extrravio_perda.jpg"));
+				"C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_extrravio_perda.jpg"));
 		label.setBounds(32, 90, 46, 55);
 		contentPane.add(label);
 
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(
-				"G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_consulta_furto.png"));
+				"C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_consulta_furto.png"));
 		lblNewLabel.setBounds(32, 26, 46, 43);
 		contentPane.add(lblNewLabel);
 
 		label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(
-				"G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_bo_furto.png"));
+				"C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_bo_furto.png"));
 		label_1.setBounds(32, 171, 46, 43);
 		contentPane.add(label_1);
-		
+
 		btnSair = new JButton("Sair");
 		btnSair.setBounds(128, 243, 91, 23);
 		contentPane.add(btnSair);
 		btnSair.addActionListener(new ActionListener() {
-			
+
 			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -156,8 +175,7 @@ public class DelegaciaView extends JFrame {
 				Login form = new Login();
 				form.show();
 				dispose();
-				
-				
+
 			}
 		});
 
