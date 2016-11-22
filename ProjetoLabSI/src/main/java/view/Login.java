@@ -82,6 +82,7 @@ public class Login extends JFrame {
 
 					DelegaciaView form = new DelegaciaView();
 					form.show();
+					dispose();
 
 				} else {
 					

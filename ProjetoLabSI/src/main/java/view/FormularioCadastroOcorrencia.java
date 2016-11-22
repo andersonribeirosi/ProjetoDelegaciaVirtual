@@ -345,7 +345,9 @@ public class FormularioCadastroOcorrencia extends JFrame {
 
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				
+//				new DelegaciaView().show();  //retorna para a classe principal
+				dispose(); //fecha a atual
 
 			}
 		});

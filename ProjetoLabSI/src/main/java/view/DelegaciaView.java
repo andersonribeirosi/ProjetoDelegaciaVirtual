@@ -6,13 +6,13 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 public class DelegaciaView extends JFrame {
 
@@ -38,12 +38,6 @@ public class DelegaciaView extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
-
-	JButton comando_sair;
 	JButton criarFormularioVeiculo;
 	JButton cadastrarOcorrencia;
 	JButton btnCadastrar;
@@ -56,18 +50,16 @@ public class DelegaciaView extends JFrame {
 	private JLabel label;
 	private JLabel lblNewLabel;
 	private JLabel label_1;
-	
-	
-//	private JButton btnCadastrar;
-	
-	
+	private JButton btnSair;
+
+	// private JButton btnCadastrar;
 
 	public DelegaciaView() {
 		// Inicializações
 		final FormularioConsultaVeiculo fveiculo = new FormularioConsultaVeiculo();
 		final FormularioCadastroOcorrencia ocorrencia = new FormularioCadastroOcorrencia();
 		final FormularioCadastroFurto furto = new FormularioCadastroFurto();
-		
+
 		////////////////////////////////////////////////////////////////////////////////////////////
 		setFont(new Font("Arial Black", Font.PLAIN, 12));
 		setForeground(Color.ORANGE);
@@ -101,14 +93,13 @@ public class DelegaciaView extends JFrame {
 		};
 
 		btnCadastrar_click = new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				furto.setVisible(true);
 			}
 		};
-		
-		
+
 		////////////////////////////////////////////////////////////////////////////////////////////
 		cadastrarOcorrencia_click = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -116,11 +107,6 @@ public class DelegaciaView extends JFrame {
 
 			}
 		};
-
-		// criar os botões
-		comando_sair = new JButton("Sair");
-		comando_sair.setBounds(108, 247, 120, 30);
-		comando_sair.addActionListener(comando_sair_click);
 
 		criarFormularioVeiculo = new JButton("Consultar Situa\u00E7\u00E3o do Ve\u00EDculo");
 		criarFormularioVeiculo.setBounds(81, 26, 222, 43);
@@ -132,32 +118,48 @@ public class DelegaciaView extends JFrame {
 		cadastrarOcorrencia.addActionListener(cadastrarOcorrencia_click);
 		contentPane.setLayout(null);
 
-		// adicionar os botões ao formulario
-		getContentPane().add(comando_sair);
-
 		getContentPane().add(criarFormularioVeiculo);
 		getContentPane().add(cadastrarOcorrencia);
-		
-		
+
 		btnCadastrar = new JButton("Cadastrar Ocorr\u00EAncia de Furto");
 		btnCadastrar.setBounds(81, 171, 222, 43);
 		btnCadastrar.addActionListener(btnCadastrar_click);
 		contentPane.add(btnCadastrar);
-		
+
 		label = new JLabel("");
-		label.setIcon(new ImageIcon("G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_extrravio_perda.jpg"));
+		label.setIcon(new ImageIcon(
+				"G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_extrravio_perda.jpg"));
 		label.setBounds(32, 90, 46, 55);
 		contentPane.add(label);
-		
+
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_consulta_furto.png"));
+		lblNewLabel.setIcon(new ImageIcon(
+				"G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_consulta_furto.png"));
 		lblNewLabel.setBounds(32, 26, 46, 43);
 		contentPane.add(lblNewLabel);
-		
+
 		label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_bo_furto.png"));
+		label_1.setIcon(new ImageIcon(
+				"G:\\Desenvolvimento\\Desenvolvimento de Softwares\\Anderson\\Faculdade 2016.2\\Bruno Dias - Lab Sistemas\\Dados e telas StoryBoard\\Imagens\\icon_bo_furto.png"));
 		label_1.setBounds(32, 171, 46, 43);
 		contentPane.add(label_1);
+		
+		btnSair = new JButton("Sair");
+		btnSair.setBounds(128, 243, 91, 23);
+		contentPane.add(btnSair);
+		btnSair.addActionListener(new ActionListener() {
+			
+			@SuppressWarnings("deprecation")
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				Login form = new Login();
+				form.show();
+				dispose();
+				
+				
+			}
+		});
 
 	}
 }

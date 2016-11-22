@@ -358,12 +358,9 @@ public class FormularioCadastroFurto extends JFrame {
 				tf_endereco.setText(null);
 				tf_numero.setText(null);
 				tf_complemento.setText(null);
-				// lblNewLabel.setText(null);
-				// lblNmero.setText(null);
-				// lblComplemento.setText(null);
 				tf_bairro.setText(null);
 				tf_cidade.setText(null);
-				comboBox_2.setSelectedItem(null);
+				cb_estado1.setSelectedItem(null);
 				cb_estado.setSelectedItem(null);
 				tf_cep.setText(null);
 
@@ -382,8 +379,10 @@ public class FormularioCadastroFurto extends JFrame {
 
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
 
+//				new DelegaciaView().show();  //retorna pra tela principal
+				dispose(); // fecha a atual
+				
 			}
 		});
 
