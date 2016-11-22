@@ -27,7 +27,7 @@ public class Acesso {
 				tabela = consulta.executeQuery("select login, senha from usuarios where login='"+login+"'and senha='"+senha+"'");
 
 				if (tabela.next()) {
-					JOptionPane.showMessageDialog(null, "Usuário e senha corretos - Logado com Sucesso");
+//					JOptionPane.showMessageDialog(null, "Usuário e senha corretos - Logado com Sucesso");
 					acesso = true;
 				} else {
 

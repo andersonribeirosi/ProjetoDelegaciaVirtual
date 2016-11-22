@@ -286,6 +286,10 @@ public class FormularioCadastroOcorrencia extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
+//				if(tf_nomeUsuario.getText().equals("")){
+//					JOptionPane.showMessageDialog(null, "Campo obrigatório");	
+//					}
+//				
 				ocorrencia.setNome(tf_nomeUsuario.getText());
 				ocorrencia.setData(tf_dataNasc.getText());
 				ocorrencia.setCpf(tf_cpf.getText());

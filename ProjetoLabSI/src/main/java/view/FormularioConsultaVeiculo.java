@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import controller.ConexaoBD;
@@ -18,21 +19,16 @@ public class FormularioConsultaVeiculo extends JFrame {
 	Veiculo veiculo = new Veiculo();
 	ControleVeiculo controle = new ControleVeiculo();
 	ConexaoBD connex = new ConexaoBD();
-	
-	
+
 	private static final long serialVersionUID = 1L;
 	JLabel lb_placa, lb_renavan, lb_cor, lb_marca, lb_ano_fab, lb_ano_mod, lb_chassi, lb_preco, lb_modelo;
 	JTextField tf_renavan, tf_ano_fab, tf_ano_mod, tf_chassi, tf_preco, tf_modelo, tf_placa;
 	JComboBox<String> cb_cor, cb_marca;
 	JButton bt_consulta, bt_limpar, bt_fechar;
-	
-		
-	
-	public FormularioConsultaVeiculo() {
-		
-		
 
-//		JOptionPane.showMessageDialog(null, "Consultar Situação do Veículo");
+	public FormularioConsultaVeiculo() {
+
+		// JOptionPane.showMessageDialog(null, "Consultar Situação do Veículo");
 		setTitle("Consulta de Veículos");
 		setSize(550, 450);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -55,10 +51,11 @@ public class FormularioConsultaVeiculo extends JFrame {
 
 		bt_consulta = new JButton("Consultar");
 		bt_consulta.setToolTipText("Realizar Consulta");
+
 		bt_consulta.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-				
-				
+
 				veiculo.setPlaca(tf_placa.getText());
 				veiculo.setChassi(tf_chassi.getText());
 				veiculo.setRenavan(tf_renavan.getText());
@@ -67,37 +64,37 @@ public class FormularioConsultaVeiculo extends JFrame {
 				veiculo.setModelo(tf_modelo.getText());
 				veiculo.setCor((String) cb_cor.getSelectedItem());
 				veiculo.setMarca((String) cb_marca.getSelectedItem());
-				
+
 				controle.salvar(veiculo);
+
+				// private void bt_consulta(java.awt.event.ActionEvent evt){
+				// veiculo.setPlaca(tf_placa.getText());
+				// veiculo.setChassi(tf_chassi.getText());
+				// veiculo.setRenavan(tf_renavan.getText());
+				// veiculo.setAno_fab(tf_ano_fab.getText());
+				// veiculo.setAno_mod(tf_ano_mod.getText());
+				// veiculo.setModelo(tf_modelo.getText());
+				// veiculo.setCor((String) cb_cor.getSelectedItem());
+				// veiculo.setMarca((String) cb_marca.getSelectedItem());
+				//
+				// controle.salvar(veiculo);
+				//
+
+				// Captura os dados e exibe na tela
+
+				 String texto = "Dados do Véiculo \n " + " \n";
+				 texto += "Placa: " + tf_placa.getText() + " \n ";
+				 texto += "Renavan: " + tf_renavan.getText() + " \n ";
+				 texto += "Chassi: " + tf_chassi.getText() + " \n ";
+				 texto += "Marca: " + cb_marca.getSelectedItem() + " \n ";
+				 texto += "Modelo: " + tf_modelo.getText() + " \n ";
+				 texto += "Cor: " + cb_cor.getSelectedItem() + " \n ";
+				 texto += "Ano de Fabricação: " + tf_ano_fab.getText() + " \n";
+				 texto += "Ano Modelo: " + tf_ano_mod.getText() + " \n ";
 				
-//				private void bt_consulta(java.awt.event.ActionEvent evt){
-//					veiculo.setPlaca(tf_placa.getText());
-//					veiculo.setChassi(tf_chassi.getText());
-//					veiculo.setRenavan(tf_renavan.getText());
-//					veiculo.setAno_fab(tf_ano_fab.getText());
-//					veiculo.setAno_mod(tf_ano_mod.getText());
-//					veiculo.setModelo(tf_modelo.getText());
-//					veiculo.setCor((String) cb_cor.getSelectedItem());
-//					veiculo.setMarca((String) cb_marca.getSelectedItem());
-//					
-//					controle.salvar(veiculo);
-//					
-				
-				
-				
-				//Captura os dados e  exibe na tela
-				
-//				String texto = "Dados do Véiculo \n " + " \n";
-//				texto += "Placa: " + tf_placa.getText() + " \n ";
-//				texto += "Renavan: " + tf_renavan.getText() + " \n ";
-//				texto += "Chassi: " + tf_chassi.getText() + " \n ";
-//				texto += "Marca: " + cb_marca.getSelectedItem() + " \n ";
-//				texto += "Modelo: " + tf_modelo.getText() + " \n ";
-//				texto += "Cor: " + cb_cor.getSelectedItem() + " \n ";
-//				texto += "Ano de Fabricação: " + tf_ano_fab.getText() + " \n ";
-//				texto += "Ano Modelo: " + tf_ano_mod.getText() + " \n ";
-//
-//				JOptionPane.showMessageDialog(null, texto);
+				 JOptionPane.showMessageDialog(null, texto);
+				 	new DelegaciaView().show();  //retorna pra tela principal
+					dispose(); // fecha a atual
 			}
 		});
 		bt_limpar = new JButton("Limpar");
@@ -120,9 +117,12 @@ public class FormularioConsultaVeiculo extends JFrame {
 		bt_fechar.setToolTipText("Fecha o formulário de consulta");
 
 		bt_fechar.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
 
+				new DelegaciaView().show();  //retorna pra tela principal
+				dispose(); // fecha a atual
+				
 			}
 		});
 		cb_cor.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Selecione a Cor", "Amarelo",
@@ -170,12 +170,8 @@ public class FormularioConsultaVeiculo extends JFrame {
 		bt_consulta.setBounds(20, 340, 100, 30);
 		bt_limpar.setBounds(143, 340, 99, 30);
 		bt_fechar.setBounds(266, 340, 100, 30);
-		
-		
-			
-			
-		}
-	
+
+	}
 
 	public static void main(String args[]) {
 		new FormularioConsultaVeiculo().setVisible(true);

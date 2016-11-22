@@ -24,6 +24,7 @@ public class ControleOcorrencia {
 							+ "cep, telefoneres, celular, email, descricao) "
 							+ "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
+			
 			pst.setString(1, ocorrencia.getNome());
 			pst.setString(2, ocorrencia.getData());
 			pst.setString(3, ocorrencia.getCpf());
@@ -45,7 +46,7 @@ public class ControleOcorrencia {
 			pst.setString(19, ocorrencia.getDescricao());
 
 			pst.execute();
-
+			
 			JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso");
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Erro ao inserir");

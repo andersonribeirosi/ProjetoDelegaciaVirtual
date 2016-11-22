@@ -85,12 +85,14 @@ public class Login extends JFrame {
 					dispose();
 
 				} else {
+
+					textLogin.setText(null);
+					passwordField.setText(null);
 					
-							textLogin.setText(null);
-							passwordField.setText(null);
+					
 				}
-				
-				}
+
+			}
 		});
 
 		JLabel lblLogin = new JLabel("Usu\u00E1rio");
@@ -122,6 +124,7 @@ public class Login extends JFrame {
 		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		chckbxNewCheckBox.setBackground(Color.LIGHT_GRAY);
 		chckbxNewCheckBox.setBounds(115, 194, 197, 23);
+
 		contentPane.add(chckbxNewCheckBox);
 
 		btnSair = new JButton("Sair");

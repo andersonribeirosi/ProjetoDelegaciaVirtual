@@ -290,9 +290,15 @@ public class FormularioCadastroFurto extends JFrame {
 		contentPane.add(btnRegistrar);
 		btnRegistrar.addActionListener(new ActionListener() {
 
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				
+//				if(tf_nomeUsuario.getText().equals("")){
+//				JOptionPane.showMessageDialog(null, "Campo obrigatório");	
+//				}
+				
+				
 				furto.setNome(tf_nomeUsuario.getText());
 				furto.setData(tf_dataNasc.getText());
 				furto.setCpf(tf_cpf.getText());
@@ -334,7 +340,10 @@ public class FormularioCadastroFurto extends JFrame {
 				tf_celular.setText(null);
 				tf_email.setText(null);
 				ta_descricao.setText(null);
-
+				
+				new DelegaciaView().show();  //retorna pra tela principal
+				dispose(); // fecha a atual
+				
 			}
 		});
 
