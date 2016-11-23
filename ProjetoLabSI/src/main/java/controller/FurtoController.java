@@ -7,10 +7,10 @@ import javax.swing.JOptionPane;
 
 import model.Furto;
 
-public class ControleFurto {
+public class FurtoController {
 
 
-		ConexaoBD connex = new ConexaoBD();
+		ConexaoController connex = new ConexaoController();
 
 		Furto furto = new Furto();
 

@@ -1,67 +1,59 @@
 package model;
 
-import java.util.ArrayList;
-
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="usuarios")
 public class Usuario {
-	private int id_usuario;
-	private String nome;
+	private int idUsuario;
+	private String login;
+	private String data_nasc;
+	private String cpf;
+	private String rg;
+	private String senha;
 
-	@Embedded
-	private Endereco endereco;
-
-	@Embedded
-	private ArrayList<Telefone> telefones;
-
-	public Usuario(int id_usuario, String nome, Endereco endereco, ArrayList<Telefone> telefones) {
-		this.id_usuario = id_usuario;
-		this.nome = nome;
-		this.endereco = endereco;
-		this.telefones = telefones;
+	public int getIdUsuario() {
+		return idUsuario;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	public int getId_usuario() {
-		return id_usuario;
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
-	public void setId_usuario(int id_usuario) {
-		this.id_usuario = id_usuario;
+	public String getLogin() {
+		return login;
 	}
 
-	@Column(name = "nome")
-	public String getNome() {
-		return nome;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public String getData_nasc() {
+		return data_nasc;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
+	public void setData_nasc(String data_nasc) {
+		this.data_nasc = data_nasc;
 	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public ArrayList<Telefone> getTelefones() {
-		return telefones;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
-	public void setTelefones(ArrayList<Telefone> telefones) {
-		this.telefones = telefones;
+	public String getRg() {
+		return rg;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 }

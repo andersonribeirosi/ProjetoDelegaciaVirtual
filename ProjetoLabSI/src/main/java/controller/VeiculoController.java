@@ -7,9 +7,9 @@ import javax.swing.JOptionPane;
 
 import model.Veiculo;
 
-public class ControleVeiculo {
+public class VeiculoController {
 
-	ConexaoBD connex = new ConexaoBD();
+	ConexaoController connex = new ConexaoController();
 
 	Veiculo veiculo = new Veiculo();
 	

@@ -10,15 +10,15 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import controller.ConexaoBD;
-import controller.ControleVeiculo;
+import controller.ConexaoController;
+import controller.VeiculoController;
 import model.Veiculo;
 
 public class FormularioConsultaVeiculo extends JFrame {
 
 	Veiculo veiculo = new Veiculo();
-	ControleVeiculo controle = new ControleVeiculo();
-	ConexaoBD connex = new ConexaoBD();
+	VeiculoController controle = new VeiculoController();
+	ConexaoController connex = new ConexaoController();
 
 	private static final long serialVersionUID = 1L;
 	JLabel lb_placa, lb_renavan, lb_cor, lb_marca, lb_ano_fab, lb_ano_mod, lb_chassi, lb_preco, lb_modelo;
@@ -53,7 +53,6 @@ public class FormularioConsultaVeiculo extends JFrame {
 		bt_consulta.setToolTipText("Realizar Consulta");
 
 		bt_consulta.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 
 				veiculo.setPlaca(tf_placa.getText());
@@ -93,7 +92,7 @@ public class FormularioConsultaVeiculo extends JFrame {
 				 texto += "Ano Modelo: " + tf_ano_mod.getText() + " \n ";
 				
 				 JOptionPane.showMessageDialog(null, texto);
-				 	new DelegaciaView().show();  //retorna pra tela principal
+//				 	new DelegaciaView().show();  //retorna pra tela principal
 					dispose(); // fecha a atual
 			}
 		});

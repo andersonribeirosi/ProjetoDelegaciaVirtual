@@ -17,15 +17,15 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import controller.ConexaoBD;
-import controller.ControleFurto;
+import controller.ConexaoController;
+import controller.FurtoController;
 import model.Furto;
 
 public class FormularioCadastroFurto extends JFrame {
 
 	Furto furto = new Furto();
-	ControleFurto controle = new ControleFurto();
-	ConexaoBD connex = new ConexaoBD();
+	FurtoController controle = new FurtoController();
+	ConexaoController connex = new ConexaoController();
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -139,6 +139,7 @@ public class FormularioCadastroFurto extends JFrame {
 
 		JLabel lblNomeCompletosem = new JLabel("Nome Completo (sem abrevia\u00E7\u00F5es)");
 		lblNomeCompletosem.setBounds(22, 58, 236, 20);
+				
 		contentPane.add(lblNomeCompletosem);
 
 		JLabel lblCpfapenasOs = new JLabel("CPF (apenas os n\u00FAmeros)");

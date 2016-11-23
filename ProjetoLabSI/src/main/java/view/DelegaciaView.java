@@ -51,6 +51,7 @@ public class DelegaciaView extends JFrame {
 	private JLabel label;
 	private JLabel lblNewLabel;
 	private JLabel label_1;
+	private JButton btnLogout;
 	private JButton btnSair;
 
 	// private JButton btnCadastrar;
@@ -66,14 +67,14 @@ public class DelegaciaView extends JFrame {
 		setForeground(Color.ORANGE);
 		setBackground(UIManager.getColor("Button.background"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 1000, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		// definir o titulo do formulario
 
 		setTitle("Delegacia Virtual");
-		setSize(344, 315);
+		setSize(596, 448);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,12 +111,21 @@ public class DelegaciaView extends JFrame {
 		};
 
 		criarFormularioVeiculo = new JButton("Consultar Situa\u00E7\u00E3o do Ve\u00EDculo");
-		criarFormularioVeiculo.setBounds(81, 26, 222, 43);
+		criarFormularioVeiculo.setBounds(196, 51, 222, 43);
 		criarFormularioVeiculo.addActionListener(criarFormularioVeiculo_click);
 		contentPane.setLayout(null);
+		criarFormularioVeiculo.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				dispose();
+
+			}
+		});
 
 		cadastrarOcorrencia = new JButton("Registro de B.O Extravio / Perda");
-		cadastrarOcorrencia.setBounds(81, 97, 222, 43);
+		cadastrarOcorrencia.setBounds(196, 131, 222, 43);
 		cadastrarOcorrencia.addActionListener(cadastrarOcorrencia_click);
 		contentPane.setLayout(null);
 		cadastrarOcorrencia.addActionListener(new ActionListener() {
@@ -132,7 +142,7 @@ public class DelegaciaView extends JFrame {
 		getContentPane().add(cadastrarOcorrencia);
 
 		btnCadastrar = new JButton("Cadastrar Ocorr\u00EAncia de Furto");
-		btnCadastrar.setBounds(81, 171, 222, 43);
+		btnCadastrar.setBounds(196, 208, 222, 43);
 		btnCadastrar.addActionListener(btnCadastrar_click);
 		contentPane.add(btnCadastrar);
 		btnCadastrar.addActionListener(new ActionListener() {
@@ -146,35 +156,56 @@ public class DelegaciaView extends JFrame {
 		});
 
 		label = new JLabel("");
-		label.setIcon(new ImageIcon(
-				"C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_extrravio_perda.jpg"));
-		label.setBounds(32, 90, 46, 55);
+		label.setIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_extrravio_perda.jpg"));
+		label.setBounds(147, 124, 46, 55);
 		contentPane.add(label);
 
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_consulta_furto.png"));
-		lblNewLabel.setBounds(32, 26, 46, 43);
+		lblNewLabel
+				.setIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_consulta_furto.png"));
+		lblNewLabel.setBounds(147, 51, 46, 43);
 		contentPane.add(lblNewLabel);
 
 		label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon(
-				"C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_bo_furto.png"));
-		label_1.setBounds(32, 171, 46, 43);
+		label_1.setIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_bo_furto.png"));
+		label_1.setBounds(147, 208, 46, 43);
 		contentPane.add(label_1);
 
-		btnSair = new JButton("Sair");
-		btnSair.setBounds(128, 243, 91, 23);
-		contentPane.add(btnSair);
-		btnSair.addActionListener(new ActionListener() {
+		btnLogout = new JButton("Logout");
+		btnLogout.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnLogout.setBounds(160, 375, 113, 23);
+		contentPane.add(btnLogout);
+		btnLogout.addActionListener(new ActionListener() {
 
 			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
 				Login form = new Login();
 				form.show();
 				dispose();
+
+			}
+		});
+
+		btnSair = new JButton("Sair");
+		btnSair.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnSair.setBounds(308, 375, 91, 23);
+		contentPane.add(btnSair);
+		
+		JButton btnFaleConosco = new JButton("Fale Conosco");
+		btnFaleConosco.setSelectedIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_faleconosco.png"));
+		btnFaleConosco.setBounds(196, 284, 222, 43);
+		contentPane.add(btnFaleConosco);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_faleconosco.png"));
+		label_2.setBounds(147, 284, 46, 43);
+		contentPane.add(label_2);
+		btnSair.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
 
 			}
 		});

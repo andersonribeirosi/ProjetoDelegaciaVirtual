@@ -11,21 +11,20 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import controller.ConexaoBD;
-import controller.ControleOcorrencia;
+import controller.ConexaoController;
+import controller.OcorrenciaController;
 import model.Ocorrencia;
 
 public class FormularioCadastroOcorrencia extends JFrame {
 
 	Ocorrencia ocorrencia = new Ocorrencia();
-	ControleOcorrencia controle = new ControleOcorrencia();
-	ConexaoBD connex = new ConexaoBD();
+	OcorrenciaController controle = new OcorrenciaController();
+	ConexaoController connex = new ConexaoController();
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -63,7 +62,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 	private JButton btnCancelar;
 
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog(null, "Registrar Boleltim de Ocorrência");
+//		JOptionPane.showMessageDialog(null, "Registrar Boleltim de Ocorrência");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -125,13 +124,14 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		contentPane.add(cb_sexo);
 
 		JLabel lblBoDeExtravio = new JLabel(" B.O. de Extravio / Perda");
-		lblBoDeExtravio.setIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_extrravio_perda.jpg"));
+		lblBoDeExtravio.setIcon(new ImageIcon("ProjetoDelegaciaVirtual\\Imagens\\icon_extrravio_perda.jpg"));
 		lblBoDeExtravio.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblBoDeExtravio.setBounds(22, 11, 287, 43);
 		contentPane.add(lblBoDeExtravio);
 
 		JLabel lblNomeCompletosem = new JLabel("Nome Completo (sem abrevia\u00E7\u00F5es)");
 		lblNomeCompletosem.setBounds(22, 59, 236, 20);
+
 		contentPane.add(lblNomeCompletosem);
 
 		JLabel lblCpfapenasOs = new JLabel("CPF (apenas os n\u00FAmeros)");
@@ -282,14 +282,14 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		btnRegistrar.setBounds(22, 528, 91, 23);
 		contentPane.add(btnRegistrar);
 		btnRegistrar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-//				if(tf_nomeUsuario.getText().equals("")){
-//					JOptionPane.showMessageDialog(null, "Campo obrigatório");	
-//					}
-//				
+				// if(tf_nomeUsuario.getText().equals("")){
+				// JOptionPane.showMessageDialog(null, "Campo obrigatório");
+				// }
+				//
 				ocorrencia.setNome(tf_nomeUsuario.getText());
 				ocorrencia.setData(tf_dataNasc.getText());
 				ocorrencia.setCpf(tf_cpf.getText());
@@ -309,9 +309,9 @@ public class FormularioCadastroOcorrencia extends JFrame {
 				ocorrencia.setCelular(tf_celular.getText());
 				ocorrencia.setEmail(tf_email.getText());
 				ocorrencia.setDescricao(ta_descricao.getText());
-				
+
 				controle.salvarOcorrencia(ocorrencia);
-				
+
 				tf_nomeUsuario.setText(null);
 				tf_dataNasc.setText(null);
 				tf_cpf.setText(null);
@@ -331,10 +331,9 @@ public class FormularioCadastroOcorrencia extends JFrame {
 				tf_celular.setText(null);
 				tf_email.setText(null);
 				ta_descricao.setText(null);
-				
+
 			}
 		});
-		
 
 		JLabel lblEmail = new JLabel("E-mail");
 		lblEmail.setBounds(22, 454, 46, 14);
@@ -351,9 +350,9 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		btnCancelar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-				
-				new DelegaciaView().show();  //retorna para a classe principal
-				dispose(); //fecha a atual
+
+				new DelegaciaView().show(); // retorna para a classe principal
+				dispose(); // fecha a atual
 
 			}
 		});

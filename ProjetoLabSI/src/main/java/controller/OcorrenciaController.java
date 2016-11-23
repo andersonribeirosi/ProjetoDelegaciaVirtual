@@ -7,9 +7,9 @@ import javax.swing.JOptionPane;
 
 import model.Ocorrencia;
 
-public class ControleOcorrencia {
+public class OcorrenciaController {
 
-	ConexaoBD connex = new ConexaoBD();
+	ConexaoController connex = new ConexaoController();
 
 	Ocorrencia ocorrencia = new Ocorrencia();
 

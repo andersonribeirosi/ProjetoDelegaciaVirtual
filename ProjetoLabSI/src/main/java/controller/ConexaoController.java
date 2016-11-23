@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import javax.swing.JOptionPane;
 
-public class ConexaoBD {
+public class ConexaoController {
 
 	public Statement stm;
 	public ResultSet result;

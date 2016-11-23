@@ -3,7 +3,6 @@ package view;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -40,7 +39,9 @@ public class Login extends JFrame {
 					e.printStackTrace();
 				}
 			}
+
 		});
+
 	}
 
 	/**
@@ -51,9 +52,10 @@ public class Login extends JFrame {
 	private JButton btnSair;
 
 	public Login() {
+		setType(Type.POPUP);
 		setTitle("Login - Delegacia Virtual ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 604, 447);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,12 +63,12 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 
 		textLogin = new JTextField();
-		textLogin.setBounds(162, 119, 150, 20);
+		textLogin.setBounds(237, 179, 150, 20);
 		contentPane.add(textLogin);
 		textLogin.setColumns(10);
 
 		JButton btnAcessar = new JButton("Acessar");
-		btnAcessar.setBounds(118, 239, 91, 23);
+		btnAcessar.setBounds(82, 347, 125, 23);
 		contentPane.add(btnAcessar);
 		btnAcessar.addActionListener(new ActionListener() {
 
@@ -88,8 +90,7 @@ public class Login extends JFrame {
 
 					textLogin.setText(null);
 					passwordField.setText(null);
-					
-					
+
 				}
 
 			}
@@ -97,39 +98,58 @@ public class Login extends JFrame {
 
 		JLabel lblLogin = new JLabel("Usu\u00E1rio");
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblLogin.setBounds(118, 122, 46, 14);
+		lblLogin.setBounds(193, 182, 46, 14);
 		contentPane.add(lblLogin);
 
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblSenha.setBounds(118, 158, 46, 14);
+		lblSenha.setBounds(193, 224, 46, 14);
 		contentPane.add(lblSenha);
 
 		passwordField = new JPasswordField();
-		passwordField.setBounds(162, 155, 150, 20);
+		passwordField.setBounds(237, 221, 150, 20);
 		contentPane.add(passwordField);
 
 		lblLogin_1 = new JLabel("Login");
-		lblLogin_1.setForeground(SystemColor.activeCaption);
+		lblLogin_1.setForeground(new Color(0, 0, 204));
 		lblLogin_1.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblLogin_1.setBounds(48, 33, 119, 23);
+		lblLogin_1.setBounds(162, 61, 119, 23);
 		contentPane.add(lblLogin_1);
 
 		lblEntreComOs = new JLabel("Entre com os dados corretamente para acessar o sistema.");
 		lblEntreComOs.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblEntreComOs.setBounds(48, 59, 346, 14);
+		lblEntreComOs.setBounds(162, 87, 346, 14);
 		contentPane.add(lblEntreComOs);
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Mantenha-me conectado");
 		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		chckbxNewCheckBox.setBackground(Color.LIGHT_GRAY);
-		chckbxNewCheckBox.setBounds(115, 194, 197, 23);
-
+		chckbxNewCheckBox.setBounds(190, 262, 197, 23);
 		contentPane.add(chckbxNewCheckBox);
 
+	
 		btnSair = new JButton("Sair");
-		btnSair.setBounds(221, 239, 91, 23);
+		btnSair.setBounds(231, 347, 112, 23);
 		contentPane.add(btnSair);
+		
+		JButton btnCadastrarAcesso = new JButton("Cadastrar Acesso");
+		btnCadastrarAcesso.setBounds(364, 347, 138, 23);
+		contentPane.add(btnCadastrarAcesso);
+		btnCadastrarAcesso.addActionListener(new ActionListener() {
+			
+			@SuppressWarnings("deprecation")
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				
+				new FormularioCadastroUsuario().show();  //retorna pra tela principal
+				dispose();
+				
+				
+			}
+		});
+		
+		
 
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
