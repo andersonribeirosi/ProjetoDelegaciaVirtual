@@ -128,9 +128,9 @@ public class FormularioCadastroUsuario extends JFrame {
 
 		lb_senha.setBounds(20, 162, 150, 15);
 
-		bt_salvar.setBounds(20, 340, 80, 30);
-		bt_limpar.setBounds(105, 340, 80, 30);
-		bt_fechar.setBounds(190, 340, 80, 30);
+		bt_salvar.setBounds(25, 344, 123, 30);
+		bt_limpar.setBounds(158, 344, 123, 30);
+		bt_fechar.setBounds(291, 344, 123, 30);
 
 		tf_nome = new JTextField();
 		tf_nome.setBounds(20, 64, 206, 20);

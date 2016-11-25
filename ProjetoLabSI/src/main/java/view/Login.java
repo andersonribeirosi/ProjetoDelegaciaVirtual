@@ -127,29 +127,25 @@ public class Login extends JFrame {
 		chckbxNewCheckBox.setBounds(190, 262, 197, 23);
 		contentPane.add(chckbxNewCheckBox);
 
-	
 		btnSair = new JButton("Sair");
 		btnSair.setBounds(231, 347, 112, 23);
 		contentPane.add(btnSair);
-		
-		JButton btnCadastrarAcesso = new JButton("Cadastrar Acesso");
+
+		JButton btnCadastrarAcesso = new JButton("Cadastre-se");
 		btnCadastrarAcesso.setBounds(364, 347, 138, 23);
 		contentPane.add(btnCadastrarAcesso);
 		btnCadastrarAcesso.addActionListener(new ActionListener() {
-			
+
 			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				
-				new FormularioCadastroUsuario().show();  //retorna pra tela principal
+				new FormularioCadastroUsuario().show(); // retorna pra tela
+														// principal
 				dispose();
-				
-				
+
 			}
 		});
-		
-		
 
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

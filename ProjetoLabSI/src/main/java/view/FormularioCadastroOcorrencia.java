@@ -60,9 +60,12 @@ public class FormularioCadastroOcorrencia extends JFrame {
 	private JTextField tf_email;
 	private JButton btnLimpar;
 	private JButton btnCancelar;
+	private JLabel label_8;
+	private JLabel label_9;
 
 	public static void main(String[] args) {
-//		JOptionPane.showMessageDialog(null, "Registrar Boleltim de Ocorrência");
+		// JOptionPane.showMessageDialog(null, "Registrar Boleltim de
+		// Ocorrência");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -90,6 +93,8 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		tf_nomeUsuario.setBounds(22, 80, 486, 20);
 		contentPane.add(tf_nomeUsuario);
 		tf_nomeUsuario.setColumns(10);
+		
+		
 
 		tf_dataNasc = new JTextField();
 		tf_dataNasc.setBounds(562, 80, 192, 20);
@@ -99,12 +104,12 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		tf_cpf = new JTextField();
 		tf_cpf.setText("");
 		tf_cpf.setColumns(10);
-		tf_cpf.setBounds(22, 134, 253, 20);
+		tf_cpf.setBounds(22, 134, 241, 20);
 		contentPane.add(tf_cpf);
 
 		tf_rg = new JTextField();
 		tf_rg.setColumns(10);
-		tf_rg.setBounds(285, 134, 189, 20);
+		tf_rg.setBounds(285, 134, 160, 20);
 		contentPane.add(tf_rg);
 
 		final JComboBox<String> cb_estado1 = new JComboBox<String>();
@@ -163,18 +168,18 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		contentPane.add(tf_NomePai);
 
 		tf_endereco = new JTextField();
-		tf_endereco.setBounds(22, 304, 409, 20);
+		tf_endereco.setBounds(22, 304, 394, 20);
 		contentPane.add(tf_endereco);
 		tf_endereco.setColumns(10);
 
 		tf_numero = new JTextField();
 		tf_numero.setColumns(10);
-		tf_numero.setBounds(443, 304, 86, 20);
+		tf_numero.setBounds(443, 304, 75, 20);
 		contentPane.add(tf_numero);
 
 		tf_complemento = new JTextField();
 		tf_complemento.setColumns(10);
-		tf_complemento.setBounds(539, 304, 215, 20);
+		tf_complemento.setBounds(550, 304, 204, 20);
 		contentPane.add(tf_complemento);
 
 		lblNewLabel = new JLabel("Endereço");
@@ -186,7 +191,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		contentPane.add(lblNmero);
 
 		lblComplemento = new JLabel("Complemento");
-		lblComplemento.setBounds(540, 279, 102, 14);
+		lblComplemento.setBounds(550, 279, 102, 14);
 		contentPane.add(lblComplemento);
 
 		tf_bairro = new JTextField();
@@ -249,13 +254,13 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		contentPane.add(lblTelefone);
 
 		tf_telres = new JTextField();
-		tf_telres.setBounds(22, 426, 160, 20);
+		tf_telres.setBounds(22, 426, 152, 20);
 		contentPane.add(tf_telres);
 		tf_telres.setColumns(10);
 
 		tf_celular = new JTextField();
 		tf_celular.setColumns(10);
-		tf_celular.setBounds(192, 426, 160, 20);
+		tf_celular.setBounds(191, 426, 150, 20);
 		contentPane.add(tf_celular);
 
 		lblCelular = new JLabel("Celular");
@@ -283,6 +288,7 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		contentPane.add(btnRegistrar);
 		btnRegistrar.addActionListener(new ActionListener() {
 
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
@@ -290,6 +296,26 @@ public class FormularioCadastroOcorrencia extends JFrame {
 				// JOptionPane.showMessageDialog(null, "Campo obrigatório");
 				// }
 				//
+
+				// Todos os componentes do Painel do Frame
+
+				 
+//				Component components[] = getContentPane().getComponents();
+//				
+//				// Para cada componente
+//				for (int i = 0; i < components.length; i++) {
+//					// É campo de texto?
+//					if (components[i] instanceof JTextField) {
+//						// Está preenchido?
+//						if (((JTextField) components[i]).getText().isEmpty()) {
+//							// Não, então exibo mensagem de erro
+//							JOptionPane.showMessageDialog(null, "Preencher todos os campos");
+//							break;
+//						}
+//					}
+//
+//				}
+				
 				ocorrencia.setNome(tf_nomeUsuario.getText());
 				ocorrencia.setData(tf_dataNasc.getText());
 				ocorrencia.setCpf(tf_cpf.getText());
@@ -332,8 +358,12 @@ public class FormularioCadastroOcorrencia extends JFrame {
 				tf_email.setText(null);
 				ta_descricao.setText(null);
 
+				new DelegaciaView().show();  
+				dispose();
 			}
+		
 		});
+		
 
 		JLabel lblEmail = new JLabel("E-mail");
 		lblEmail.setBounds(22, 454, 46, 14);
@@ -342,10 +372,97 @@ public class FormularioCadastroOcorrencia extends JFrame {
 		btnLimpar = new JButton("Limpar");
 		btnLimpar.setBounds(140, 528, 91, 23);
 		contentPane.add(btnLimpar);
+		btnLimpar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				tf_nomeUsuario.setText(null);
+				tf_dataNasc.setText(null);
+				tf_cpf.setText(null);
+				tf_rg.setText(null);
+				cb_sexo.setSelectedItem(null);
+				tf_nomeMae.setText(null);
+				tf_NomePai.setText(null);
+				tf_endereco.setText(null);
+				tf_numero.setText(null);
+				tf_complemento.setText(null);
+				tf_bairro.setText(null);
+				tf_cidade.setText(null);
+				cb_estado1.setSelectedItem(null);
+				cb_estado.setSelectedItem(null);
+				tf_cep.setText(null);
+
+				tf_telres.setText(null);
+				tf_celular.setText(null);
+				tf_email.setText(null);
+
+			}
+		});
+		
 
 		btnCancelar = new JButton("Fechar");
 		btnCancelar.setBounds(261, 528, 91, 23);
 		contentPane.add(btnCancelar);
+		
+		JLabel label_1 = new JLabel("*");
+		label_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_1.setForeground(Color.RED);
+		label_1.setBounds(512, 86, 18, 14);
+		contentPane.add(label_1);
+		
+		JLabel label_2 = new JLabel("*");
+		label_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_2.setForeground(Color.RED);
+		label_2.setBounds(266, 137, 18, 20);
+		contentPane.add(label_2);
+		
+		JLabel label_3 = new JLabel("*");
+		label_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_3.setForeground(Color.RED);
+		label_3.setBounds(448, 137, 13, 20);
+		contentPane.add(label_3);
+		
+		JLabel label_4 = new JLabel("*");
+		label_4.setForeground(Color.RED);
+		label_4.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_4.setBounds(758, 86, 13, 14);
+		contentPane.add(label_4);
+		
+		JLabel label_5 = new JLabel("*");
+		label_5.setForeground(Color.RED);
+		label_5.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_5.setBounds(422, 310, 13, 14);
+		contentPane.add(label_5);
+		
+		JLabel label_6 = new JLabel("*");
+		label_6.setForeground(Color.RED);
+		label_6.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_6.setBounds(522, 313, 18, 8);
+		contentPane.add(label_6);
+		
+		JLabel label_7 = new JLabel("*");
+		label_7.setForeground(Color.RED);
+		label_7.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_7.setBounds(618, 537, 13, 14);
+		contentPane.add(label_7);
+		
+		JLabel lblCamposObrigatrios = new JLabel("Campos Obrigat\u00F3rios");
+		lblCamposObrigatrios.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblCamposObrigatrios.setForeground(Color.RED);
+		lblCamposObrigatrios.setBounds(629, 537, 142, 14);
+		contentPane.add(lblCamposObrigatrios);
+		
+		label_8 = new JLabel("*");
+		label_8.setForeground(Color.RED);
+		label_8.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_8.setBounds(179, 432, 13, 14);
+		contentPane.add(label_8);
+		
+		label_9 = new JLabel("*");
+		label_9.setForeground(Color.RED);
+		label_9.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_9.setBounds(346, 432, 18, 14);
+		contentPane.add(label_9);
 
 		btnCancelar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
@@ -366,5 +483,4 @@ public class FormularioCadastroOcorrencia extends JFrame {
 	public void setComboBox_2(JComboBox<String> comboBox_2) {
 		this.comboBox_2 = comboBox_2;
 	}
-
 }

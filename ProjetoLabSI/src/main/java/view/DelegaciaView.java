@@ -172,7 +172,7 @@ public class DelegaciaView extends JFrame {
 		contentPane.add(label_1);
 
 		btnLogout = new JButton("Logout");
-		btnLogout.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnLogout.setBounds(160, 375, 113, 23);
 		contentPane.add(btnLogout);
 		btnLogout.addActionListener(new ActionListener() {
