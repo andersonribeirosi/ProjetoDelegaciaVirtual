@@ -15,7 +15,7 @@ public class ConexaoController {
 	private String driver = "org.postgresql.Driver";
 	private String caminho = "jdbc:postgresql://localhost:5432/AcessoSistema";
 	private String usuario = "postgres";
-	private String senha = "5414jb";
+	private String senha = "sql123";
 	public Connection conn;
 
 	public void conexao() {

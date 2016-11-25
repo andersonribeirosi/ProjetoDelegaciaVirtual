@@ -41,11 +41,13 @@ public class DelegaciaView extends JFrame {
 
 	JButton criarFormularioVeiculo;
 	JButton cadastrarOcorrencia;
+	JButton registrarOcorrenciaDeVeiculo;
 	JButton btnCadastrar;
 
 	// eventos
 	ActionListener comando_sair_click;
 	ActionListener criarFormularioVeiculo_click;
+	ActionListener criarOcorrenciaDeVeiculo_click;
 	ActionListener cadastrarOcorrencia_click;
 	ActionListener btnCadastrar_click;
 	private JLabel label;
@@ -61,6 +63,7 @@ public class DelegaciaView extends JFrame {
 		final FormularioConsultaVeiculo fveiculo = new FormularioConsultaVeiculo();
 		final FormularioCadastroOcorrencia ocorrencia = new FormularioCadastroOcorrencia();
 		final FormularioCadastroFurto furto = new FormularioCadastroFurto();
+		final FormularioCadastroOcorrenciaDeVeiculo furtoVeiculo = new FormularioCadastroOcorrenciaDeVeiculo();
 
 		////////////////////////////////////////////////////////////////////////////////////////////
 		setFont(new Font("Arial Black", Font.PLAIN, 12));
@@ -74,7 +77,7 @@ public class DelegaciaView extends JFrame {
 		// definir o titulo do formulario
 
 		setTitle("Delegacia Virtual");
-		setSize(596, 448);
+		setSize(670, 528);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,6 +93,13 @@ public class DelegaciaView extends JFrame {
 		criarFormularioVeiculo_click = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fveiculo.setVisible(true);
+
+			}
+		};
+		
+		criarOcorrenciaDeVeiculo_click = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				furtoVeiculo.setVisible(true);
 
 			}
 		};
@@ -111,7 +121,7 @@ public class DelegaciaView extends JFrame {
 		};
 
 		criarFormularioVeiculo = new JButton("Consultar Situa\u00E7\u00E3o do Ve\u00EDculo");
-		criarFormularioVeiculo.setBounds(196, 51, 222, 43);
+		criarFormularioVeiculo.setBounds(196, 75, 222, 43);
 		criarFormularioVeiculo.addActionListener(criarFormularioVeiculo_click);
 		contentPane.setLayout(null);
 		criarFormularioVeiculo.addActionListener(new ActionListener() {
@@ -123,9 +133,23 @@ public class DelegaciaView extends JFrame {
 
 			}
 		});
+		
+		registrarOcorrenciaDeVeiculo = new JButton("Registrar Ocorrência de Veiculo");
+		registrarOcorrenciaDeVeiculo.setBounds(196, 280, 216, 43);
+		registrarOcorrenciaDeVeiculo.addActionListener(criarOcorrenciaDeVeiculo_click);
+		contentPane.setLayout(null);
+		registrarOcorrenciaDeVeiculo.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				dispose();
+
+			}
+		});
 
 		cadastrarOcorrencia = new JButton("Registro de B.O Extravio / Perda");
-		cadastrarOcorrencia.setBounds(196, 131, 222, 43);
+		cadastrarOcorrencia.setBounds(196, 142, 222, 43);
 		cadastrarOcorrencia.addActionListener(cadastrarOcorrencia_click);
 		contentPane.setLayout(null);
 		cadastrarOcorrencia.addActionListener(new ActionListener() {
@@ -140,6 +164,7 @@ public class DelegaciaView extends JFrame {
 
 		getContentPane().add(criarFormularioVeiculo);
 		getContentPane().add(cadastrarOcorrencia);
+		getContentPane().add(registrarOcorrenciaDeVeiculo);
 
 		btnCadastrar = new JButton("Cadastrar Ocorr\u00EAncia de Furto");
 		btnCadastrar.setBounds(196, 208, 222, 43);
@@ -173,7 +198,7 @@ public class DelegaciaView extends JFrame {
 
 		btnLogout = new JButton("Logout");
 		btnLogout.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnLogout.setBounds(160, 375, 113, 23);
+		btnLogout.setBounds(163, 445, 113, 23);
 		contentPane.add(btnLogout);
 		btnLogout.addActionListener(new ActionListener() {
 
@@ -189,12 +214,12 @@ public class DelegaciaView extends JFrame {
 
 		btnSair = new JButton("Sair");
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnSair.setBounds(308, 375, 91, 23);
+		btnSair.setBounds(351, 445, 91, 23);
 		contentPane.add(btnSair);
 		
 		JButton btnFaleConosco = new JButton("Fale Conosco");
 		btnFaleConosco.setSelectedIcon(new ImageIcon("C:\\ProjetosGit\\ProjetoDelegaciaVirtual\\Imagens\\icon_faleconosco.png"));
-		btnFaleConosco.setBounds(196, 284, 222, 43);
+		btnFaleConosco.setBounds(196, 349, 222, 43);
 		contentPane.add(btnFaleConosco);
 		
 		JLabel label_2 = new JLabel("");
