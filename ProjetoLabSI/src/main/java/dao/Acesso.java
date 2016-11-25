@@ -22,7 +22,7 @@ public class Acesso {
 
 			try {
 				Class.forName("org.postgresql.Driver");
-				con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/AcessoSistema", "postgres", "sql123");
+				con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/AcessoSistema", "postgres", "5414jb");
 				consulta = (Statement) con.createStatement();
 				tabela = consulta.executeQuery("select login, senha from usuarios where login='"+login+"'and senha='"+senha+"'");
 
